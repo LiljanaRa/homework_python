@@ -8,16 +8,24 @@ class Shape(ABC):
     def area(self):
         ...
 
+    @abstractmethod
+    def perimeter(self):
+        ...
+
+    @abstractmethod
+    def get_figur_info(self):
+        ...
+    
 
 class Rectangle(Shape):
-
-    def area(self):
-        rect_area = rectangle.height * rectangle.width
-        return f"Площадь прямоугольника равна: {rect_area}"
 
     def __init__(self, height, width):
         self.height = height
         self.width = width
+        
+    def area(self):
+        rect_area = rectangle.height * rectangle.width
+        return f"Площадь прямоугольника равна: {rect_area}"
 
     def perimeter(self):
         return f"Периметр прямоугольника равен: {2 * (self.height + self.width)}"
@@ -28,12 +36,12 @@ class Rectangle(Shape):
 
 class Circle(Shape):
 
+    def __init__(self, radius):
+        self.radius = radius
+
     def area(self):
         circle_area = pi * (circle.radius ** 2)
         return f"Площадь круга равна: {circle_area:.2f}"
-
-    def __init__(self, radius):
-        self.radius = radius
 
     def perimeter(self):
         return f"Периметр круга равен: {2 * pi * self.radius:.2f}"
