@@ -10,7 +10,7 @@ class Email:
         self.date = self.convert_str_date_to_date_object(date)
 
     def convert_str_date_to_date_object(self, date):
-        if type(date) == str:
+        if isinstance(date, str):
             date_obj = datetime.strptime(date, "%Y-%m-%d")
             return date_obj
         return None
